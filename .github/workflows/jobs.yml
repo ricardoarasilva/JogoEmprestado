@@ -1,0 +1,8 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: mcr.microsoft.com/dotnet/sdk:5.0
+    steps:
+      - uses: actions/checkout@v2
+      - runs: docker-compose up -d
