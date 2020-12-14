@@ -1,0 +1,7 @@
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env
+
+COPY . .
+
+COPY ./appsettings.test.json ./api/appsettings.json
+           
+ENTRYPOINT ["dotnet", "test"] 

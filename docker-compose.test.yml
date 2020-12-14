@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+
+  mongo-test:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - 27017:27017
+    
+  api-server-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.Api.Test
+    environment: 
+      MongoDB__Host: mongo-test
+      UserApi: admin
+      PasswordApi: admin123
+      RoleApi: admin
+    depends_on: 
+      - mongo-test

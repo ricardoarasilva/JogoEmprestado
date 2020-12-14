@@ -1,17 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Threading.Tasks;
+
 using api.Models;
-using api;
-using api.Services;
 using api.Controllers;
 using Xunit;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Xunit.Abstractions;
-using System.Reflection;
 
 namespace api.tests.Services
 {
